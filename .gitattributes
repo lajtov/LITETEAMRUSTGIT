@@ -1,2 +1,135 @@
-# Auto detect text files and perform LF normalization
+# ============================================================
+#  LiteAC — .gitattributes
+#  Нормализация окончаний строк и бинарные файлы
+# ============================================================
+
+# Автоопределение текстовых файлов с нормализацией в LF
 * text=auto
+
+# ============================================================
+#  Явное указание текстовых файлов (LF)
+# ============================================================
+*.cpp       text eol=lf
+*.h         text eol=lf
+*.hpp       text eol=lf
+*.c         text eol=lf
+*.cc        text eol=lf
+*.cxx       text eol=lf
+*.inl       text eol=lf
+*.ipp       text eol=lf
+
+# Заголовки и конфиги
+*.def       text eol=lf
+*.rc        text eol=lf
+*.md        text eol=lf
+*.txt       text eol=lf
+*.json      text eol=lf
+*.xml       text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.toml      text eol=lf
+*.ini       text eol=lf
+*.cfg       text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# ============================================================
+#  Файлы Visual Studio (CRLF — для корректной работы VS)
+# ============================================================
+*.sln       text eol=crlf
+*.vcxproj   text eol=crlf
+*.vcxproj.filters text eol=crlf
+*.vcxproj.user    text eol=crlf
+*.props     text eol=crlf
+*.targets   text eol=crlf
+
+# ============================================================
+#  Бинарные файлы (без нормализации)
+# ============================================================
+*.dll       binary
+*.lib       binary
+*.exe       binary
+*.pdb       binary
+*.obj       binary
+*.o         binary
+*.a         binary
+*.so        binary
+*.dylib     binary
+*.exp       binary
+*.ilk       binary
+*.idb       binary
+*.res       binary
+*.sys       binary
+
+# Ресурсы и медиа
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.bmp       binary
+*.ico       binary
+*.cur       binary
+*.tif       binary
+*.tiff      binary
+*.webp      binary
+*.svg       text eol=lf
+
+# Аудио
+*.mp3       binary
+*.wav       binary
+*.ogg       binary
+*.flac      binary
+*.m4a       binary
+
+# Видео
+*.mp4       binary
+*.avi       binary
+*.mkv       binary
+*.mov       binary
+
+# Архивы
+*.zip       binary
+*.rar       binary
+*.7z        binary
+*.tar       binary
+*.gz        binary
+*.bz2       binary
+
+# Документы
+*.pdf       binary
+*.doc       binary
+*.docx      binary
+*.xls       binary
+*.xlsx      binary
+*.ppt       binary
+*.pptx      binary
+
+# Прочее
+*.bin       binary
+*.dat       binary
+*.db        binary
+*.sqlite    binary
+*.pf        binary
+*.pdb       binary
+
+# ============================================================
+#  Исключения (не трогать)
+# ============================================================
+# Не нормализовать сгенерированные файлы
+*.Designer.cs   -text
+*.generated.*   -text
+
+# ============================================================
+#  Diff-драйверы для удобного просмотра
+# ============================================================
+*.vcxproj   diff=msvc
+*.sln       diff=msvc
+
+# ============================================================
+#  Linguist — исключить из статистики GitHub
+# ============================================================
+MUSIC/*     linguist-vendored
+SDK/*       linguist-vendored
+*.mp3       linguist-detectable=false
+*.dll       linguist-detectable=false
+*.lib       linguist-detectable=false
